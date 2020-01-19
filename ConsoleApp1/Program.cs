@@ -13,23 +13,17 @@ public class Example
             { 0x45BA0, 0x45BBF, 0}, {0x45BC0, 0x45C9F, 2}, {0x45CA0, 0x45CBF, 0}, {0x45CC0, 0x45D9F, 2},{ 0x45DA0, 0x45DBF, 0}, {0x45DC0, 0x45E9F, 2}, {0x45EA0, 0x45EBF, 0},
             { 0x45EC0, 0x45F9F, 2}, {0x45FA0, 0x45FBF, 0}, {0x45FC0, 0x4609F, 2}, {0x460A0, 0x460BF, 0}, {0x460C0, 0x4619F, 2}, {0x461A0, 0x461BF, 0},{ 0x461C0, 0x4A06F, 2},
             { 0x4A070, 0x51DAF, 1}, {0x51DB0, 0x520BF, 2}, {0x520C0, 0x535BF, 0}};
-        byte[] bytesOrig = System.IO.File.ReadAllBytes("L:/save_1_switch.bin");
+        byte[] bytesOrig = System.IO.File.ReadAllBytes("L:/save_1_wiiu.bin");
         // Offset after which endian is swapped?
         //int pos = 0x535BF;
-        FileStream file = File.Create("L:/save_1_switch_converted.bin");
+        FileStream file = File.Create("L:/save_1_wiiu_converted.bin");
         byte[] twobyteswap = new byte[2];
         byte[] fourbyteswap = new byte[4];
         byte[] bytescopy = new byte[2];
         int start, end = 0;
-        int sum = 0;
         for (int i = 0; i < array2D.GetLength(0); i++)
         {
-            sum += (array2D[i, 1]- array2D[i, 0]);
-            //Console.WriteLine(sum);
-            //Console.WriteLine(i);
-            Console.WriteLine(array2D[i,0]);
-            Console.WriteLine(array2D[i, 1]);
-            //Console.WriteLine(array2D[i, 2]);
+            Console.WriteLine(i);
             switch (array2D[i, 2])
             {
                 //Copy bytes
@@ -80,10 +74,3 @@ public class Example
         file.Close();
     }
     }
-// The example displays the following output on a little-endian system:
-//       4E-61-BC-00
-//       00-BC-61-4E
-//       00-BC-61-4E
-//       4E-61-BC-00
-//       Original value: 12345678
-//       Returned value: 12345678
