@@ -5,9 +5,13 @@ public class Example
 {
     public static void Main(string[] args)
     {
-        // Ranges of offsets, 0 is copying data 1:1 to the output file, 1 reverses every 2 bytes of the input, 2 reverses every 4 bytes, 3 reverses every 8 bytes
+        // Ranges of offsets
+        //0 is copying data 1:1 from input to the output file
+        //1 reverses every 2 bytes
+        //2 reverses every 4 bytes
+        //3 reverses every 8 bytes
         int[,] array2D = new int[,] { 
-            { 0x00000, 0x0000F, 1}, {0x00010, 0x00017, 3}, {0x00018, 0x0009F, 2}, {0x000A0, 0x0209F, 0}, {0x020A0, 0x020FF, 2}, 
+            { 0x00000, 0x0000F, 1}, {0x00010, 0x00017, 3}, {0x00018, 0x0009F, 2}, {0x000A0, 0x0209F, 0}, {0x020A0, 0x020A5, 1}, {0x020A6, 0x020FF, 2}, 
              {0x02100, 0x34EFF, 0}, {0x34F00, 0x3541F, 2}, {0x35420, 0x4191F, 1}, {0x41920, 0x44CDF, 2}, {0x44CE0, 0x450DF, 1}, 
              {0x450E0, 0x4519F, 2}, {0x451A0, 0x451BF, 0}, {0x451C0, 0x4529F, 2}, {0x452A0, 0x452BF, 0}, {0x452C0, 0x4539F, 2},
              {0x453A0, 0x453BF, 0}, {0x453C0, 0x4549F, 2}, {0x454A0, 0x454BF, 0}, {0x454C0, 0x4559F, 2}, {0x455A0, 0x455BF, 0}, 
