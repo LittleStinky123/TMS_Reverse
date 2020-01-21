@@ -14,16 +14,27 @@ public class Example
         int[,] array2D = new int[,] { 
             {0x00000, 0x0000F, 1}, {0x00010, 0x00017, 3}, {0x00018, 0x0009F, 2}, {0x000A0, 0x0209F, 0}, {0x020A0, 0x020A7, 1}, 
             {0x020A8, 0x020FF, 2}, 
-            // TODO Between 0x0 and 0x6BE0 the crash lies
-            // TODO For correct character level, copying needs to be done as only one byte per character
+            // TODO Between 0x0 and 0x368B0 the wrong save file info lies
+            // TODO Between 0x368B0 and 0x535BF the crash lies
             {0x02100, 0x34EFF, 0},
             {0x34F00, 0x350CF, 2}, {0x350D0, 0x3510F, 1 },
+            //Characters
             {0x35110, 0x3512F, 2 },
             {0x35130, 0x3546F, 1 },
             {0x35470, 0x3548F, 2 },
-            {0x35490, 0x3577F, 1 },
-            {0x35780, 0x3579F, 2 },
-            {0x357A0, 0x368A3, 1 }, {0x368A4, 0x368A7, 2},
+            {0x35490, 0x357CF, 1 },
+            {0x357D0, 0x357EF, 2 },
+            {0x357F0, 0x35B2F, 1 },
+            {0x35B30, 0x35B4F, 2 },
+            {0x35B50, 0x35E8F, 1 },
+            {0x35E90, 0x35EAF, 2 },
+            {0x35EB0, 0x361EF, 1 },
+            {0x361F0, 0x3620F, 2 },
+            {0x36210, 0x3654F, 1 },
+            {0x36550, 0x3656F, 2 },
+            //Characters
+            {0x36570, 0x368A3, 1 },
+            {0x368A4, 0x368A7, 2},
             {0x368A8, 0x3E457, 1 },{0x3E458, 0x3E45B, 2 },
             // TODO region somewhere here that is copied, for stuff like levels
             {0x3E45C, 0x3E665, 1},
